@@ -1,0 +1,85 @@
+$work-sans-font-path: '../assets/fonts/work-sans';
+$avenir-next-font-path: '../assets/fonts/avenir-next';
+$sf-compact-font-path: '../assets/fonts/sf-compact-text';
+$roboto-font-path: '../assets/fonts/roboto';
+
+@font-face {
+    font-family: 'Work Sans';
+    src: url('#{$work-sans-font-path}/WorkSans-Bold.woff') format('woff'),
+         url('#{$work-sans-font-path}/WorkSans-Bold.ttf') format('truetype');
+    font-weight: 700;
+}
+@font-face {
+    font-family: 'Work Sans';
+    src: url('#{$work-sans-font-path}/WorkSans-SemiBold.woff') format('woff'),
+         url('#{$work-sans-font-path}/WorkSans-SemiBold.ttf') format('truetype');
+    font-weight: 600;
+}
+@font-face {
+    font-family: 'Work Sans';
+    src: url('#{$work-sans-font-path}/WorkSans-Medium.woff') format('woff'),
+         url('#{$work-sans-font-path}/WorkSans-Medium.ttf') format('truetype');
+    font-weight: 500;
+}
+@font-face {
+    font-family: 'Work Sans';
+    src: url('#{$work-sans-font-path}/WorkSans-Regular.woff') format('woff'),
+         url('#{$work-sans-font-path}/WorkSans-Regular.ttf') format('truetype');
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'Avenir Next';
+    src: url('#{$avenir-next-font-path}/avenir-next-bold.woff') format('woff'),
+         url('#{$avenir-next-font-path}/avenir-next-bold.ttf') format('truetype');
+    font-weight: 700;
+}
+@font-face {
+    font-family: 'Avenir Next';
+    src: url('#{$avenir-next-font-path}/avenir-next-demi.woff') format('woff'),
+         url('#{$avenir-next-font-path}/avenir-next-demi.ttf') format('truetype');
+    font-weight: 600;
+}
+@font-face {
+    font-family: 'Avenir Next';
+    src: url('#{$avenir-next-font-path}/avenir-next-regular.woff') format('woff'),
+         url('#{$avenir-next-font-path}/avenir-next-regular.ttf') format('truetype');
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'SF Compact Text';
+    src: url('#{$sf-compact-font-path}/SFCompactTextRegular.woff') format('woff'),
+         url('#{$sf-compact-font-path}/SFCompactTextRegular.woff2') format('woff2'),
+         url('#{$sf-compact-font-path}/SFCompactTextRegular.ttf') format('truetype');
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('#{$roboto-font-path}/roboto-regular.woff') format('woff'),
+         url('#{$roboto-font-path}/roboto-regular.woff2') format('woff2'),
+         url('#{$roboto-font-path}/roboto-regular.ttf') format('truetype');
+    font-weight: 400;
+}
+
+$white: #ffffff;
+$text-color: #545f7d;
+$primary-color: #213f7d;
+$secondary-color: #39cdcc;
+
+
+$primary-font: 'Work Sans', sans-serif;
+$secondary-font: 'Avenir Next', $primary-font, sans-serif;
+$tertiary-font: 'SF Compact Text', $secondary-font, $primary-font, sans-serif;
+$link-font: 'Roboto', $tertiary-font, $secondary-font, $primary-font, sans-serif;
+
+$font-xs: 0.75rem;
+$font-sm: 0.875rem;
+$font-base: 1rem;
+$font-lg: 1.25rem;
+$font-xl: 1.375rem;
+$font-2xl: 1.5rem;
+$font-4xl: 2.5rem;
+
+$header-height: 6.5rem;

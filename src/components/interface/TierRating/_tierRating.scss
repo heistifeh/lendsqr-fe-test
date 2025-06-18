@@ -1,0 +1,9 @@
+.tier-rating {
+    display: flex;
+    align-items: center;
+
+    &-star {
+        color: #e9b200;
+        margin-right: 0.25rem;
+    }
+}
