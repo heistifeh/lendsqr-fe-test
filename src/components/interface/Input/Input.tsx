@@ -1,8 +1,10 @@
-import React, { InputHTMLAttributes, ReactNode, forwardRef, useRef } from 'react'
+import React, { forwardRef, useRef } from 'react'
+import type { ReactNode } from 'react'
+import type { InputHTMLAttributes } from 'react'
 import classnames from 'classnames'
 import PropTypes from 'prop-types'
 import { mergeRefs } from 'react-merge-refs'
-
+import './_input.scss'
 export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   className?: string
   placeholder?: string
@@ -12,7 +14,7 @@ export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   onChange?: (...args: any[]) => any
 }
 
-const Input: React.FC<InputProps> = forwardRef((props, ref) => {
+const Input = forwardRef<HTMLInputElement, InputProps>((props, ref) => {
   const {
     className,
     placeholder,

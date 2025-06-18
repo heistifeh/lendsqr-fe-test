@@ -1,5 +1,5 @@
 import classnames from "classnames"
-
+import './_card.scss'
 interface CardProps {
     className?: string
     children: React.ReactNode

@@ -1,7 +1,8 @@
-import React, { ButtonHTMLAttributes, ReactNode } from 'react'
+import React from 'react'
+import type { ButtonHTMLAttributes, ReactNode } from 'react'
 import classnames from 'classnames'
 import LoadingDots from '../LoadingDots/LoadingDots'
-
+import './_button.scss'
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     children: ReactNode
     className?: string
