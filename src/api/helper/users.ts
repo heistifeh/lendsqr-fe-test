@@ -37,3 +37,6 @@ export const getUsers = (
 
   return get<UserInfoItem[]>(url); // ✅ typed response
 };
+
+export const getSingleUser = (userId: string | undefined) =>
+  get(`${usersUrl}/${userId}`);

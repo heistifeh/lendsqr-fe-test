@@ -1,0 +1,279 @@
+@use '../../../styles/variables' as v;
+@use '../../../styles/mixins' as m;
+
+.user-details {
+    .back-to-users {
+        color: v.$text-color;
+        font-size: v.$font-base;
+        font-weight: 400;
+        line-height: 19px;
+        display: flex;
+        align-items: center;
+        margin-bottom: 1.5rem;
+        text-decoration: none;
+
+        span {
+            margin-left: 0.75rem;
+        }
+    }
+
+    &-header {
+        display: flex;
+        flex-direction: column;
+
+        h1 {
+            color: v.$primary-color;
+            font-weight: 500;
+            font-size: v.$font-2xl;
+            line-height: 28px;
+        }
+        
+        @media screen and (min-width: 768px) {
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+        }
+    }
+
+    &-btns {
+        display: flex;
+        flex-direction: column;
+        margin-top: 1rem;
+
+        @media screen and (min-width: 425px) {
+            flex-direction: row;
+            align-items: center;
+        }
+
+        @media screen and (min-width: 768px) {
+            width: 70%;
+            justify-content: end;
+            margin-top: 0;
+        }
+
+        .btn {
+            letter-spacing: 0.1em;
+            white-space: nowrap;
+            max-width: 10.625rem;
+
+            &.blacklist {
+                color: #e4033b;
+                margin-right: 1rem;
+                margin-bottom: 0.75rem;
+
+                @media screen and (min-width: 425px) {
+                    margin-right: 1.25rem;
+                    margin-bottom: 0;
+                }
+                
+                @media screen and (min-width: 768px) {
+                    margin-right: 1.25rem;
+                }
+            }
+    
+            &.activate {
+                color: #39cdcc;
+            }
+        }
+    }
+
+    &-card-highlight {
+        margin: 2.5rem 0 1.875rem 0;
+        padding-bottom: 0;
+
+        .user-profile {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 3.125rem;
+
+            @media screen and (min-width: 768px) {
+                flex-direction: row;
+            }
+
+            &-icon {
+                color: v.$primary-color;
+                background: rgba(33, 63, 125, 0.16);
+                border-radius: 100%;
+                width: 6.25rem;
+                height: 6.25rem;
+                margin-right: 0;
+                margin-bottom: 1rem;
+                @include m.centerElement();
+
+                @media screen and (min-width: 768px) {
+                    margin-right: 1.25rem;
+                    margin-bottom: 0;
+                }
+            }
+
+            &-identity {
+                padding: 0;
+                text-align: center;
+
+                @media screen and (min-width: 768px) {
+                    padding: 1.2rem 1.875rem 1.2rem 0;
+                    text-align: left;
+                }
+
+                h2 {
+                    color: v.$primary-color;
+                    font-size: v.$font-xl;
+                    font-weight: 500;
+                    line-height: 26px;
+                    margin-bottom: 0.5rem;
+                }
+
+                span {
+                    color: v.$text-color;
+                    font-size: v.$font-sm;
+                    line-height: 16px;
+                }
+            }
+
+            &-tier {
+                width: 100%;
+                padding: 1rem 0;
+                margin: 1rem 0;
+                border-top: 1px solid rgba(84, 95, 125, 0.2);
+                border-bottom: 1px solid rgba(84, 95, 125, 0.2);
+                border-left: none;
+                border-right: none;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+                @media screen and (min-width: 768px) {
+                    width: auto;
+                    padding: 1rem 1.75rem;
+                    margin: 0;
+                    border-top: none;
+                    border-bottom: none;
+                    border-left: 1px solid rgba(84, 95, 125, 0.2);
+                    border-right: 1px solid rgba(84, 95, 125, 0.2);
+                    align-items: flex-start;
+                }
+
+                @media screen and (min-width: 1024px) {
+                    padding: 1rem;
+                }
+
+                @media screen and (min-width: 1280px) {
+                    padding: 1.2rem 1.875rem;
+                }
+
+                h2 {
+                    color: v.$text-color;
+                    font-size: v.$font-sm;
+                    font-weight: 500;
+                    line-height: 16px;
+                    margin-bottom: 0.625rem;
+                }
+            }
+
+            &-funds {
+                padding: 0;
+                text-align: center;
+                
+                @media screen and (min-width: 768px) {
+                    padding: 1.2rem 0 1.2rem 1.875rem;
+                    text-align: left;
+                }
+
+                h2 {
+                    color: v.$primary-color;
+                    font-size: v.$font-xl;
+                    font-weight: 500;
+                    line-height: 26px;
+                    margin-bottom: 0.75rem;
+                }
+
+                span {
+                    color: v.$primary-color;
+                    font-size: v.$font-xs;
+                    line-height: 14px;
+                }
+            }
+        }
+
+        .user-tabs {
+            display: flex;
+            align-items: baseline;
+            justify-content: space-between;
+            overflow-x: auto;
+
+            .user-tab {
+                color: rgba(0, 0, 0, 0.8);
+                font-size: v.$font-base;
+                font-weight: 400;
+                position: relative;
+                padding: 0 1.5rem 0.625rem;
+                white-space: nowrap;
+                @include m.transition(color, 0.3s);
+
+                &.active {
+                    color: v.$secondary-color;
+                    border-bottom: 2px solid v.$secondary-color;
+                }
+            }
+        }
+    }
+
+    &-card-records {
+        .record {
+            padding-top: 1.875rem;
+            border-bottom: 1px solid rgba(33, 63, 125, 0.1);
+
+            &:last-child {
+                border-bottom: none;
+            }
+
+            &:first-child {
+                padding-top: 0;
+            }
+
+            h3 {
+                color: v.$primary-color;
+                font-size: v.$font-base;
+                font-weight: 500;
+                line-height: 19px;
+                margin-bottom: 1.875rem;
+            }
+
+            &-value-container {
+                display: flex;
+                flex-wrap: wrap;
+                // justify-content: ;
+            }
+
+            &-value {
+                padding-right: 1.875rem;
+                padding-bottom: 1.875rem;
+
+                @media screen and (min-width: 1024px) {
+                    padding-right: 1.5rem;
+                }
+                
+                @media screen and (min-width: 1280px) {
+                    padding-right: 2.875rem;
+                }
+
+                h4 {
+                    color: v.$text-color;
+                    font-size: v.$font-xs;
+                    font-weight: 400;
+                    line-height: 14px;
+                    text-transform: uppercase;
+                    margin-bottom: 0.5rem;
+                }
+
+                p {
+                    color: v.$text-color;
+                    font-size: v.$font-base;
+                    font-weight: 500;
+                    line-height: 19px;
+                }
+            }
+        }
+    }
+}
