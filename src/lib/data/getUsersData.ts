@@ -1,5 +1,10 @@
-import React from 'react';
-import { UsersOutline, GroupUsersOutline, UsersLoan, UsersSavings } from '../../components/icons';
+import React from "react";
+import {
+  UsersOutline,
+  GroupUsersOutline,
+  UsersLoan,
+  UsersSavings,
+} from "../../components/icons";
 
 export interface UserDataItem {
   icon: React.FC<React.SVGProps<SVGSVGElement>>;
@@ -8,7 +13,7 @@ export interface UserDataItem {
   total: number;
 }
 
-export type StatusProps = 'Active' | 'Inactive' | 'Pending' | 'Blacklisted';
+export type StatusProps = "Active" | "Inactive" | "Pending" | "Blacklisted";
 
 interface EducationProps {
   duration: string;
@@ -17,7 +22,7 @@ interface EducationProps {
   loanRepayment: string;
   monthlyIncome: string[];
   officeEmail: string;
-  sector: string
+  sector: string;
 }
 
 export interface UserInfoItem {
@@ -32,40 +37,40 @@ export interface UserInfoItem {
 }
 
 export interface UserDetailProps {
-  key: string
-  value: string
+  key: string;
+  value: string;
 }
 
 export interface UserDetailsItem {
-  header: string
-  details: UserDetailProps[]
+  header: string;
+  details: UserDetailProps[];
 }
 
 export const getUsersData = () => {
   const usersData: UserDataItem[] = [
     {
       icon: UsersOutline,
-      color: '#df18ff',
-      category: 'users',
-      total: 2453
+      color: "#df18ff",
+      category: "users",
+      total: 2453,
     },
     {
       icon: GroupUsersOutline,
-      color: '#5718ff',
-      category: 'active users',
-      total: 2453
+      color: "#5718ff",
+      category: "active users",
+      total: 2453,
     },
     {
       icon: UsersLoan,
-      color: '#f55f44',
-      category: 'users with loans',
-      total: 12453
+      color: "#f55f44",
+      category: "users with loans",
+      total: 12453,
     },
     {
       icon: UsersSavings,
-      color: '#ff3366',
-      category: 'users with savings',
-      total: 102453
+      color: "#ff3366",
+      category: "users with savings",
+      total: 102453,
     },
   ];
 
@@ -73,122 +78,129 @@ export const getUsersData = () => {
 };
 
 export const getUserTabs = () => {
-  const userTabs: string[] = ['General Details', 'Documents', 'Bank Details', 'Loans', 'Savings', 'App and System']
+  const userTabs: string[] = [
+    "General Details",
+    "Documents",
+    "Bank Details",
+    "Loans",
+    "Savings",
+    "App and System",
+  ];
 
   return userTabs;
-}
+};
 
 export const getUserDetails = () => {
   const userDetails: UserDetailsItem[] = [
     {
-      header: 'Personal Information',
+      header: "Personal Information",
       details: [
         {
-          key: 'full name',
-          value: ''
+          key: "full name",
+          value: "",
         },
         {
-          key: 'phone number',
-          value: ''
+          key: "phone number",
+          value: "",
         },
         {
-          key: 'email address',
-          value: ''
+          key: "email address",
+          value: "",
         },
         {
-          key: 'bvn',
-          value: ''
+          key: "bvn",
+          value: "",
         },
         {
-          key: 'gender',
-          value: ''
+          key: "gender",
+          value: "",
         },
         {
-          key: 'marital status',
-          value: ''
+          key: "marital status",
+          value: "",
         },
         {
-          key: 'children',
-          value: ''
+          key: "children",
+          value: "",
         },
         {
-          key: 'type of residence',
-          value: ''
+          key: "type of residence",
+          value: "",
         },
-      ]
+      ],
     },
     {
-      header: 'Education and Employment',
+      header: "Education and Employment",
       details: [
         {
-          key: 'level of education',
-          value: ''
+          key: "level of education",
+          value: "",
         },
         {
-          key: 'employment status',
-          value: ''
+          key: "employment status",
+          value: "",
         },
         {
-          key: 'sector of employment',
-          value: ''
+          key: "sector of employment",
+          value: "",
         },
         {
-          key: 'duration of employment',
-          value: ''
+          key: "duration of employment",
+          value: "",
         },
         {
-          key: 'official email',
-          value: ''
+          key: "official email",
+          value: "",
         },
         {
-          key: 'monthly income',
-          value: ''
+          key: "monthly income",
+          value: "",
         },
         {
-          key: 'loan repayment',
-          value: ''
+          key: "loan repayment",
+          value: "",
         },
-      ]
+      ],
     },
     {
-      header: 'Socials',
+      header: "Socials",
       details: [
         {
-          key: 'twitter',
-          value: ''
+          key: "twitter",
+          value: "",
         },
         {
-          key: 'facebook',
-          value: ''
+          key: "facebook",
+          value: "",
         },
         {
-          key: 'instagram',
-          value: ''
+          key: "instagram",
+          value: "",
         },
-      ]
+      ],
     },
     {
-      header: 'Guarantor',
+      header: "Guarantor",
       details: [
         {
-          key: 'full name',
-          value: ''
+          key: "full name",
+          value: "",
         },
         {
-          key: 'phone number',
-          value: ''
+          key: "phone number",
+          value: "",
         },
         {
-          key: 'address',
-          value: ''
+          key: "address",
+          value: "",
         },
         {
-          key: 'gender',
-          value: ''
+          key: "gender",
+          value: "",
         },
-      ]
-    }
-  ]
+      ],
+    },
+  ];
 
   return userDetails;
-}
+};
