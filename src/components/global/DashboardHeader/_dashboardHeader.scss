@@ -1,0 +1,176 @@
+@use '../../../styles/variables' as v;
+
+.dashboard-header {
+    width: 100%;
+    height: 6.25rem;
+    background: v.$white;
+    padding: 1.875rem;
+    box-shadow: 3px 0px 20px rgba(0, 0, 0, 0.04);
+    position: sticky;
+    top: 0;
+    z-index: 99;
+
+    &-content {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &-left {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        @media screen and (min-width: 1024px) {
+            width: 55%;
+        }
+
+        @media screen and (min-width: 1280px) {
+            width: 51.5%;
+        }
+
+        .hamburger {
+            margin-right: 1rem;
+            color: v.$primary-color;
+
+            @media screen and (min-width: 1024px) {
+                display: none;
+                margin-right: 0;
+            }
+        }
+        
+        .header-logo {
+            width: 6rem;
+
+            &:hover {
+                animation: shake 1s ease;
+            }
+
+            @media screen and (min-width: 1024px) {
+                width: 9rem;
+            }
+              
+            @keyframes shake {
+                0% {
+                    transform: translate(2px, 1px) rotate(0deg);
+                }
+                10% {
+                    transform: translate(-1px, -2px) rotate(-1deg);
+                }
+                20% {
+                    transform: translate(-3px, 0px) rotate(1deg);
+                }
+                30% {
+                    transform: translate(0px, 2px) rotate(0deg);
+                }
+                40% {
+                    transform: translate(1px, -1px) rotate(1deg);
+                }
+                50% {
+                    transform: translate(-1px, 2px) rotate(-1deg);
+                }
+                60% {
+                    transform: translate(-3px, 1px) rotate(0deg);
+                }
+            }
+        }
+
+        .search-container {
+            display: none;
+
+            @media screen and (min-width: 1024px) {
+                display: flex;
+                align-items: stretch;
+                width: 100%;
+                max-width: 20rem;
+            }
+
+            @media screen and (min-width: 1280px) {
+                max-width: 25rem;
+            }
+
+            &-input {
+                border-right: none;
+                border-top-right-radius: 0;
+                border-bottom-right-radius: 0;
+            }
+
+            &-btn {
+                width: 3.75rem;
+                border-top-left-radius: 0;
+                border-bottom-left-radius: 0;
+            }
+        }
+    }
+
+    &-right {
+        display: flex;
+        align-items: center;
+        color: v.$primary-color;
+        
+        @media screen and (min-width: 1024px) {
+            padding-right: 1.875rem;
+        }
+
+        .docs-link {
+            display: none;
+            
+            @media screen and (min-width: 768px) {
+                margin-right: 1.5rem;
+                line-height: 19px;
+                display: block;
+            }
+
+            @media screen and (min-width: 1024px) {
+                margin-right: 3rem;
+                font-size: v.$font-base;
+            }
+        }
+
+        .bell-icon {
+            display: none;
+
+            @media screen and (min-width: 768px) {
+                display: block;
+            }
+        }
+
+        .header-profile {
+            display: flex;
+            align-items: center;
+            margin-left: 1.875rem;
+
+            &-img {
+                width: 3rem;
+                height: 3rem;
+                border-radius: 100%;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    border-radius: 100%;
+                }
+            }
+
+            &-name {
+                margin: 0 0.25rem 0 0.625rem;
+
+                span {
+                    font-size: v.$font-sm;
+                    font-weight: 500;
+
+                    @media screen and (min-width: 1024px) {
+                        font-size: v.$font-base;
+                    }
+                }
+            }
+
+            &-popup {
+                top: 4rem;
+                right: 0.5rem;
+            }
+        }
+    }
+}

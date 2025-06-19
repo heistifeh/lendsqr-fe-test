@@ -1,0 +1,25 @@
+@use '../../../styles/variables' as v;
+
+.status-pill {
+    font-size: v.$font-sm;
+    line-height: 16px;
+    padding: 0.375rem 0.75rem;
+    border-radius: 100px;
+}
+
+.status-pill.active {
+    background: rgba(57, 205, 98, 0.06);
+    color: #39cd62;
+}
+.status-pill.inactive {
+    background: rgba(84, 95, 125, 0.06);
+    color: #545f7d;
+}
+.status-pill.pending {
+    background: rgba(233, 178, 0, 0.06);
+    color: #e9b200;
+}
+.status-pill.blacklisted {
+    background: rgba(228, 3, 59, 0.06);
+    color: #e4033b;
+}

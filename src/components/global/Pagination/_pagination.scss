@@ -1,0 +1,61 @@
+@use '../../../styles/variables' as v;
+
+.pagination {
+    display: flex;
+    flex-direction: column;
+
+    @media screen and (min-width: 768px) {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &-select {
+        display: flex;
+        align-items: center;
+        margin-bottom: 1rem;
+
+        @media screen and (min-width: 768px) {
+            margin-bottom: 0;
+        }
+        
+        span {
+            color: v.$text-color;
+            font-size: v.$font-sm;
+            line-height: 16px;
+            white-space: nowrap;
+
+            &:first-child {
+                margin-right: 0.625rem;
+            }
+            &:last-child {
+                margin-left: 0.625rem;
+            }
+        }
+
+        label {
+            max-width: 5rem;
+        }
+    }
+
+    ul {
+        display: flex;
+        align-items: center;
+
+        li.space {
+            margin: 0 0.8rem;
+    
+            button.number, span {
+                color: v.$text-color;
+                font-size: v.$font-base;
+                font-weight: 400;
+                opacity: 0.6;
+            }
+
+            button.current {
+                font-weight: 500;
+                opacity: 1;
+            }
+        }
+    }
+}
