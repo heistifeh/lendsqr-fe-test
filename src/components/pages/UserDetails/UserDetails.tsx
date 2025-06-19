@@ -60,7 +60,7 @@ const Users: React.FC = () => {
 
   useEffect(() => {
     if (data) {
-      const userData = data.data;
+      const userData = data;
       setUser(userData);
 
       updateUserDetail(
@@ -188,84 +188,83 @@ const Users: React.FC = () => {
               <LoadingDots size="sm" />
             </div>
           )}
-          {!isLoading && !!data?.data && !!user && (
-            <Card className="user-details-card-highlight">
-              <div className="user-profile">
-                <div className="user-profile-icon">
-                  {user?.profile?.avatar ? (
-                    <img
-                      style={{
-                        width: "100%",
-                        height: "100%",
-                        borderRadius: "100%",
-                      }}
-                      src={user?.profile?.avatar}
-                      alt={`${user?.profile?.firstName} ${user?.profile?.lastName} profile`}
-                    />
-                  ) : (
-                    <Profile />
-                  )}
-                </div>
-                <div className="user-profile-identity">
-                  <h2>{user?.userName}</h2>
-                  <span>{user?.accountNumber}</span>
-                </div>
-                <div className="user-profile-tier">
-                  <h2>User’s Tier</h2>
-                  <TierRating
-                    starredStars={
-                      Number(user?.accountBalance) > 500 &&
-                      Number(user?.accountBalance) < 750
-                        ? 2
-                        : Number(user?.accountBalance) > 750
-                        ? 3
-                        : 1
-                    }
+
+          <Card className="user-details-card-highlight">
+            <div className="user-profile">
+              <div className="user-profile-icon">
+                {user?.profile?.avatar ? (
+                  <img
+                    style={{
+                      width: "100%",
+                      height: "100%",
+                      borderRadius: "100%",
+                    }}
+                    src={user?.profile?.avatar}
+                    alt={`${user?.profile?.firstName} ${user?.profile?.lastName} profile`}
                   />
-                </div>
-                <div className="user-profile-funds">
-                  <h2>₦{convertToThousands(user?.accountBalance)}</h2>
-                  <span>{user?.profile?.bvn}/Providus Bank</span>
-                </div>
+                ) : (
+                  <Profile />
+                )}
               </div>
-              <div className="user-tabs">
-                {getUserTabs()?.map((i: string) => {
-                  return (
-                    <Button
-                      key={i}
-                      variant="naked"
-                      className={classnames("user-tab", {
-                        active: activeUserTab === i,
-                      })}
-                      onClick={() => setActiveUserTab(i)}
-                    >
-                      {i}
-                    </Button>
-                  );
-                })}
+              <div className="user-profile-identity">
+                <h2>{user?.userName}</h2>
+                <span>{user?.accountNumber}</span>
               </div>
-            </Card>
-          )}
-         
-            <Card className="user-details-card-records">
-              {userDetails?.map((j: UserDetailsItem) => {
+              <div className="user-profile-tier">
+                <h2>User’s Tier</h2>
+                <TierRating
+                  starredStars={
+                    Number(user?.accountBalance) > 500 &&
+                    Number(user?.accountBalance) < 750
+                      ? 2
+                      : Number(user?.accountBalance) > 750
+                      ? 3
+                      : 1
+                  }
+                />
+              </div>
+              <div className="user-profile-funds">
+                <h2>₦{convertToThousands(user?.accountBalance)}</h2>
+                <span>{user?.profile?.bvn}/Providus Bank</span>
+              </div>
+            </div>
+            <div className="user-tabs">
+              {getUserTabs()?.map((i: string) => {
                 return (
-                  <div key={j.header} className="record">
-                    <h3>{j.header}</h3>
-                    <div className="record-value-container">
-                      {j.details?.map((k: UserDetailProps) => {
-                        return (
-                          <div className="record-value" key={k.key}>
-                            <h4>{k.key}</h4>
-                            <p>{k.value}</p>
-                          </div>
-                        );
-                      })}
-                    </div>
-                  </div>
+                  <Button
+                    key={i}
+                    variant="naked"
+                    className={classnames("user-tab", {
+                      active: activeUserTab === i,
+                    })}
+                    onClick={() => setActiveUserTab(i)}
+                  >
+                    {i}
+                  </Button>
                 );
-                })}
-            </Card>
+              })}
+            </div>
+          </Card>
+
+          <Card className="user-details-card-records">
+            {userDetails?.map((j: UserDetailsItem) => {
+              return (
+                <div key={j.header} className="record">
+                  <h3>{j.header}</h3>
+                  <div className="record-value-container">
+                    {j.details?.map((k: UserDetailProps) => {
+                      return (
+                        <div className="record-value" key={k.key}>
+                          <h4>{k.key}</h4>
+                          <p>{k.value}</p>
+                        </div>
+                      );
+                    })}
+                  </div>
+                </div>
+              );
+            })}
+          </Card>
         </div>
       </DashboardLayout>
     );
