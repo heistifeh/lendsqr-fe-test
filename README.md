@@ -139,19 +139,3 @@ yarn dev
 - Routing structure is clean and easy to extend.
 
 ---
-
-## 📸 Screenshots (Optional)
-
-_Add screenshots for:_
-
-- Login UI
-- Dashboard
-- User List
-- User Detail Tabs
-
----
-
-## 📜 License
-
-This project was created for a frontend test assignment.  
-**Not intended for production use.**
