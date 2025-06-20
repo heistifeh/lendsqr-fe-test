@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Button } from "../../interface";
 import classnames from "classnames";
 import { CaretLeft, CaretRight } from "../../icons";
@@ -20,9 +20,9 @@ const Pagination: React.FC<PaginationProps> = ({
   onPageSizeChange,
 }) => {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const [numPages, setNumPages] = useState(Math.ceil(totalItems / pageSize));
+  const numPages = Math.ceil(totalItems / pageSize);
 
-  console.log(setNumPages(10));
+  // console.log(setNumPages(10));
 
   const handleClick = (pageNumber: number) => {
     if (pageNumber >= 1 && pageNumber <= numPages) {

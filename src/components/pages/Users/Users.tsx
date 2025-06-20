@@ -57,13 +57,15 @@ const Users: React.FC = () => {
   const [email, setEmail] = useState<string>("");
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [date, setDate] = useState<string>("");
+
   const [phoneNumber, setPhoneNumber] = useState<string>("");
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [status, setStatus] = useState<string>("");
 
-  console.log(date, status);
-  
-  
+  const set = date + status;
+
+  console.log(set);
+
   const tableHeaders = [
     "organization",
     "username",
@@ -103,26 +105,32 @@ const Users: React.FC = () => {
   const navigate = useNavigate();
 
   const { data, isLoading, error, refetch } = useQuery({
-  queryKey: ['users', orgName, userName, email, phoneNumber],
-  queryFn: () => getUsers(orgName, userName, email, phoneNumber),
-});
+    queryKey: ["users", orgName, userName, email, phoneNumber],
+    queryFn: () => getUsers(orgName, userName, email, phoneNumber),
+  });
 
-useEffect(() => {
-  if (data) {
-    setUsers(data);
-    setTotalUsers(data.length);
-    setTotalActiveUsers(data.filter(i => !beforeTodayCheck(i.lastActiveDate)).length);
-    setTotalLoanUsers(data.filter(i => Number(i.education?.loanRepayment) > 0).length);
-    setTotalSavingsUsers(data.length - data.filter(i => Number(i.education?.loanRepayment) > 0).length);
-  }
-}, [data]);
+  useEffect(() => {
+    if (data) {
+      setUsers(data);
+      setTotalUsers(data.length);
+      setTotalActiveUsers(
+        data.filter((i) => !beforeTodayCheck(i.lastActiveDate)).length
+      );
+      setTotalLoanUsers(
+        data.filter((i) => Number(i.education?.loanRepayment) > 0).length
+      );
+      setTotalSavingsUsers(
+        data.length -
+          data.filter((i) => Number(i.education?.loanRepayment) > 0).length
+      );
+    }
+  }, [data]);
 
-useEffect(() => {
-  if (error) {
-    console.log('error', (error as any)?.response);
-  }
-}, [error]);
-
+  useEffect(() => {
+    if (error) {
+      console.log("error", (error as any)?.response);
+    }
+  }, [error]);
 
   const resetFilterFields = () => {
     setOrgName("");
@@ -289,7 +297,7 @@ useEffect(() => {
               />
             </div>
             <div className="input-item">
-              <span></span>
+              <span>Status</span>
               <Select
                 options={getStatusOptions()}
                 onChange={(e) => setStatus(e.target.value)}
