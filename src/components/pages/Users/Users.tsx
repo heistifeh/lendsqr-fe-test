@@ -61,6 +61,9 @@ const Users: React.FC = () => {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [status, setStatus] = useState<string>("");
 
+  console.log(date, status);
+  
+  
   const tableHeaders = [
     "organization",
     "username",
@@ -286,7 +289,7 @@ useEffect(() => {
               />
             </div>
             <div className="input-item">
-              <span>Status</span>
+              <span></span>
               <Select
                 options={getStatusOptions()}
                 onChange={(e) => setStatus(e.target.value)}
