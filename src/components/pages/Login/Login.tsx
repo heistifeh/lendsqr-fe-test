@@ -50,7 +50,7 @@ const Login: React.FC = () => {
               <Button
                 type="submit"
                 size="lg"
-                onClick={() => navigate("/customers/users")}
+                onClick={() => navigate("/")}
               >
                 log in
               </Button>
